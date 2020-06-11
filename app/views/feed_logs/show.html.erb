@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @feed_log.user_id %>
+</p>
+
+<p>
+  <strong>Cat:</strong>
+  <%= @feed_log.cat_id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @feed_log.comment %>
+</p>
+
+<%= link_to 'Edit', edit_feed_log_path(@feed_log) %> |
+<%= link_to 'Back', feed_logs_path %>

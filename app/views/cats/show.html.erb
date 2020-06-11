@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Names:</strong>
+  <%= @cat.names %>
+</p>
+
+<p>
+  <strong>Last fed:</strong>
+  <%= @cat.last_fed %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @cat.sector_id %>
+</p>
+
+<%= link_to 'Edit', edit_cat_path(@cat) %> |
+<%= link_to 'Back', cats_path %>
