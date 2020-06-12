@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Postal code</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
     <% @sectors.each do |sector| %>
       <tr>
         <td><%= sector.name %></td>
-        <td><%= sector.postal_code %></td>
         <td><%= link_to 'Show', sector %></td>
         <td><%= link_to 'Edit', edit_sector_path(sector) %></td>
         <td><%= link_to 'Destroy', sector, method: :delete, data: { confirm: 'Are you sure?' } %></td>

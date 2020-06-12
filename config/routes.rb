@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'application#home'
+
   resources :feed_logs
   resources :comments
   resources :cats

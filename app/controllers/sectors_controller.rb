@@ -69,6 +69,6 @@ class SectorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sector_params
-      params.require(:sector).permit(:name, :postal_code)
+      params.require(:sector).permit(:name)
     end
 end
