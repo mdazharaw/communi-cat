@@ -147,7 +147,7 @@ class AppTabbar extends React.Component {
   renderToolbar() {
     return (
       <Ons.Toolbar>
-        <div className="center">Navigator+Tabbar</div>
+        <div className="center">CommuniCat</div>
       </Ons.Toolbar>
     );
   }
