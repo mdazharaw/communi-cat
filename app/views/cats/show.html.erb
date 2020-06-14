@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<% if @cat.imageUrl != ""%>
+        <%= image_tag(@cat.imageUrl, {:style => "width:150px;"})%>
+        <%else%>
+        <p>No image</p>
+        <%end%>
 <p>
   <strong>Name:</strong>
   <%= @cat.name %>
@@ -14,6 +18,8 @@
   <strong>Sector:</strong>
   <%= @cat.sector_id %>
 </p>
-
+<%= link_to 'Log Feeding', new_feed_log_path %> |
+<%= link_to 'View Comments', comments_path %>
+<br>
 <%= link_to 'Edit', edit_cat_path(@cat) %> |
 <%= link_to 'Back', cats_path %>
