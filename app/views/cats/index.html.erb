@@ -1,4 +1,3 @@
-<div class = "container mw-100" style="display: flex; justify-content: between; flex-direction: column">
 <p id="notice"><%= notice %></p>
 
 <h1>Cats</h1>
@@ -9,7 +8,7 @@
       <th>Name</th>
       <th>Photo</th>
       <th>Last fed</th>
-      <th>Sector</th>
+      <th>Estate</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,7 +24,7 @@
         <%end%>
         </td>
         <td><%= cat.last_fed %></td>
-        <td><%= cat.sector_id %></td>
+        <td><%= cat.sector.name %></td>
         <td><%= link_to 'Show', cat %></td>
         <td><%= link_to 'Edit', edit_cat_path(cat) %></td>
         <td><%= link_to 'Destroy', cat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,7 +33,4 @@
   </tbody>
 </table>
 
-<br>
-
 <%= link_to 'New Cat', new_cat_path %>
-</div>

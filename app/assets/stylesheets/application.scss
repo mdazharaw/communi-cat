@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "font-awesome-sprockets";
+@import "font-awesome";
  .bg-main{
     background-color: #00253C;
   }
@@ -23,5 +25,17 @@
 
 .logo{
   height: 40px;
-  width: 40px;
+  width: 40px; 
+}
+.navBtn{
+  font-size: small;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+.Button {
+  color: black;
 }

@@ -28,7 +28,7 @@ class CatsController < ApplicationController
 
     respond_to do |format|
       if @cat.save
-        format.html { redirect_to @cat, notice: 'Cat was successfully created.' }
+        format.html { redirect_to @cat, notice: 'Cat was successfully added to database.' }
         format.json { render :show, status: :created, location: @cat }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class CatsController < ApplicationController
   def destroy
     @cat.destroy
     respond_to do |format|
-      format.html { redirect_to cats_url, notice: 'Cat was successfully destroyed.' }
+      format.html { redirect_to cats_url, notice: 'Cat was removed from database.' }
       format.json { head :no_content }
     end
   end

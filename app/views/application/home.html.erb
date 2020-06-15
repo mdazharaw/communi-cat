@@ -1,18 +1,12 @@
-<div class = "container mw-100" style="display: flex; justify-content: between; flex-direction: row">
-<a href="/cats" class="btn btn-outline-secondary" style="width:100px; height:100px">🐈 <br> View Cats</a>
-<% if user_signed_in?%> 
-    <a href="#" class="btn btn-outline-secondary" style="width:100px; height:100px">💗<br>Favourites</a>
-    <a href="/cats/new" class="btn btn-outline-secondary" style="width:100px; height:100px"> ➕<br>Add New Cat</a>
-    <%= link_to '🚪 Log Out', destroy_user_session_url, method: :delete, class:"btn btn-outline-secondary", style:"width:100px; height:100px" %>   
-<% else %>
-    <a href="/users/sign_in" class="btn btn-outline-secondary" style="width:100px; height:100px">🚪<br>Login</a>
-<% end %>
+<%#= javascript_pack_tag 'Index' %>
+<div class = "container mw-100" style="display: flex; justify-content: between; flex-direction: column">
+  <a href="/cats" class="btn btn-outline-secondary btn-block">
+    <%=icon('fas', 'cat', :class=> "fa-2x col")%><strong class="col">View Cats</strong></a>
+  <% if user_signed_in?%>
+    <a href="#" class="btn btn-outline-secondary btn-block"><%=icon('fas', 'heart', :class=> "fa-2x col")%><strong class="col">Favourites</strong></a>
+    <a href="/cats/new" class="btn btn-outline-secondary btn-block"><%=icon('fas', 'plus', :class=> "fa-2x col")%><strong class="col">Add New Cat</strong></a>
+      
+  <% else %>
+    <a href="/users/sign_in" class="btn btn-outline-secondary btn-block"> <%=icon('fas', 'sign-in-alt', :class=> "fa-2x col")%><strong class="col">Log In</strong></a>
+  <% end %>
 </div>
-
-
-       
-       
-
-
-
-
