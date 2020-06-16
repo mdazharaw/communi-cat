@@ -4,7 +4,7 @@
 <div class="container">
 
 <% if @cat.imageUrl != ""%>
-        <%= image_tag(@cat.imageUrl, {:class => "w-100 mt-3 mb-3"})%>
+        <%= image_tag(@cat.imageUrl, {:class => "w-100 mt-3 mb-3", :style => "max-width: 600px"} )%>
         <%else%>
         <p>No image</p>
         <%end%>
