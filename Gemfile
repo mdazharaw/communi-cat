@@ -5,6 +5,9 @@ ruby '2.5.1'
 gem 'devise'
 gem 'react-rails'
 gem 'font-awesome-sass', '~> 5.13.0'
+gem 'carrierwave'
+gem 'cloudinary'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use postgresql as the database for Active Record

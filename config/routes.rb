@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root 'application#home'
 
-  resources :feed_logs
-  resources :comments
-  resources :cats
+  
+  resources :cats 
+    resources :feed_logs
+    resources :comments
+  
   resources :sectors
   devise_for :users
 

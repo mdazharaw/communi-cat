@@ -3,7 +3,7 @@
   <a href="/cats" class="btn btn-outline-secondary btn-block">
     <%=icon('fas', 'cat', :class=> "fa-2x col")%><strong class="col">View Cats</strong></a>
   <% if user_signed_in?%>
-    <a href="#" class="btn btn-outline-secondary btn-block"><%=icon('fas', 'heart', :class=> "fa-2x col")%><strong class="col">Favourites</strong></a>
+    <%#<a href="#" class="btn btn-outline-secondary btn-block"><%=icon('fas', 'heart', :class=> "fa-2x col")<strong class="col">Favourites</strong></a>%>
     <a href="/cats/new" class="btn btn-outline-secondary btn-block"><%=icon('fas', 'plus', :class=> "fa-2x col")%><strong class="col">Add New Cat</strong></a>
       
   <% else %>

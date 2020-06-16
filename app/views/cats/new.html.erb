@@ -1,5 +1,7 @@
-<h1>New Cat</h1>
+<div class = "container d-flex flex-column justify-content-center text-center">
+<div><h4>Add New Cat</h4></div>
 
 <%= render 'form', cat: @cat %>
+<%= link_to 'Back', root_path %>
 
-<%= link_to 'Back', cats_path %>
+</div>

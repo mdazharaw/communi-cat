@@ -1,37 +1,31 @@
 <%= form_with(model: cat, local: true) do |form| %>
-  <% if cat.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cat.errors.count, "error") %> prohibited this cat from being saved:</h2>
-
-      <ul>
-        <% cat.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, 'Name:' %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :last_fed %>
-    <%= form.datetime_select :last_fed %>
-  </div>
+  <%# <div class="field">
+    <%= form.label :last_fed
+    <%= form.datetime_select :last_fed
+  </div> %>
+
+  <%# <div class="field">
+    <%= form.label :sector_id
+    <%= form.text_field :sector_id
+  </div>%>
 
   <div class="field">
-    <%= form.label :sector_id %>
-    <%= form.text_field :sector_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :imageUrl %>
+    <%= form.label :imageUrl, "Image URL: " %>
     <%= form.text_field :imageUrl %>
+    <%= form.hidden_field :sector_id, :value => @sector_id%>
+
+    <%#= form.file_field :imageUrl, direct_upload: true %>
+
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Add Cat' , :class=>"btn btn-primary"%>
   </div>
 <% end %>

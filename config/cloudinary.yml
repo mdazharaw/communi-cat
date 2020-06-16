@@ -1,0 +1,20 @@
+---
+development:
+  cloud_name: dgiphstuy
+  api_key: '511333246874279'
+  api_secret: N4hlkX2r-u5Y_Nd_ngv-jcqwFFU
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dgiphstuy
+  api_key: '511333246874279'
+  api_secret: N4hlkX2r-u5Y_Nd_ngv-jcqwFFU
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dgiphstuy
+  api_key: '511333246874279'
+  api_secret: N4hlkX2r-u5Y_Nd_ngv-jcqwFFU
+  enhance_image_tag: true
+  static_file_support: false
+  

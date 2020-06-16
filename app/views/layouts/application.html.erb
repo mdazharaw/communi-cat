@@ -19,13 +19,13 @@
     <a href="/">
       <header class="container-fluid d-flex flex-column justify-content-center pt-3 bg-main mb-2">
         <img src=<%=  image_url'Logo.png' %> alt="..." class="ml-auto mr-auto logo" style="width:40px; height:40px">
-        <h2 class="text-center txt-main">CommuniCat</h2>
+        <h3 class="text-center txt-main">CommuniCat</h3>
       </header>
     </a>
-    <div id="app" class = "container mb-5">
+    <div id="app" class = "mb-5">
       <%= yield %>
       <% if user_signed_in?%> 
-      <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-danger btn-block text-light fixed-bottom mt-5" do %>
+      <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-danger btn-block rounded-0 text-light fixed-bottom mt-5" do %>
         <span>
           <%=icon('fas', 'sign-out-alt', :class=> "fa-1x")%>
           Log Out

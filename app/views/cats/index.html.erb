@@ -1,36 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Cats</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Photo</th>
-      <th>Last fed</th>
-      <th>Estate</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cats.each do |cat| %>
-      <tr>
-        <td><%= cat.name %></td>
-        <td><% if cat.imageUrl != ""%>
-        <%= image_tag(cat.imageUrl, {:style => "width:150px;"})%>
-        <%else%>
-        <p>No image</p>
-        <%end%>
-        </td>
-        <td><%= cat.last_fed %></td>
-        <td><%= cat.sector.name %></td>
-        <td><%= link_to 'Show', cat %></td>
-        <td><%= link_to 'Edit', edit_cat_path(cat) %></td>
-        <td><%= link_to 'Destroy', cat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Cat', new_cat_path %>
+<%#= react_component("CatIndex", { cats: @cats, sectors: @sectors, currentSector: @initial_sector }) %>
+<a href="/" class="container">Back</a>
+<%# <div class="form-group container mt-2">
+  <label for="exampleFormControlSelect1">View Cats for Estate:</label>
+  <select class="form-control" id="exampleFormControlSelect1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+</div> %>
+<ul className="list-group container" style="padding-inline-start: 0px">
+  <% @cats.each do |cat| %>
+  <li class = "list-group-item">
+    <a href=<%= "/cats/#{cat.id}" %>>
+         <div class = "row">
+            <img src=<%=cat.imageUrl%> style="height:80px; width:80px, object-fit:cover"/>
+            <div class="col"><h5 className="pl-5 mt-2"><%= cat.name %></h5></div>
+         </div>
+        </a>
+        </li>
+  <% end %>
+</ul>

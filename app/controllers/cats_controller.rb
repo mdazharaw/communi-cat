@@ -4,7 +4,16 @@ class CatsController < ApplicationController
   # GET /cats
   # GET /cats.json
   def index
-    @cats = Cat.all
+    if user_signed_in?
+      me = current_user
+      c = User.find(me.id)
+      @initial_sector = c.sector_id
+      @cats = Cat.where(sector: @initial_sector)
+    else
+      @initial_sector = 0
+      @cats = Cat.all
+    end 
+    @sectors = Sector.all
   end
 
   # GET /cats/1
@@ -14,6 +23,11 @@ class CatsController < ApplicationController
 
   # GET /cats/new
   def new
+    if user_signed_in?
+      me = current_user
+      c = User.find(me.id)
+      @sector_id= c.sector_id
+    end
     @cat = Cat.new
   end
 

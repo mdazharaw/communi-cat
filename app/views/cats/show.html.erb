@@ -1,3 +1,5 @@
+<%#= react_component("ViewCat", { cats: @cats, sectors: @sectors, currentSector: @initial_sector }) %>
+
 <p id="notice"><%= notice %></p>
 <% if @cat.imageUrl != ""%>
         <%= image_tag(@cat.imageUrl, {:style => "width:150px;"})%>
