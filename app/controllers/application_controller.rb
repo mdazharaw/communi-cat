@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
         if user_signed_in?
             me = current_user
             c = User.find(me.id)
-            @email = c.email
+            @email = c.emailhero
         end
     end
     protected
