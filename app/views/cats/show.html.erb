@@ -22,6 +22,11 @@
   <strong>Estate:</strong>
   <%= @cat.sector.name %>
 </p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @cat.comment %>
+</p>
   <% if user_signed_in?%>
 <%= link_to 'Update', edit_cat_path(@cat) %> | 	<%= link_to 'Remove', @cat, method: :delete, data: { confirm: 'Are you sure?' } %>
 
