@@ -1,15 +1,19 @@
 <%#= javascript_pack_tag 'Index' %>
 <div class = "container mw-100 text-center" style="display: flex; justify-content: between; flex-direction: column">
-    <% if user_signed_in?%>
+  <% if user_signed_in?%>
     <h3>Hi <%= @email %></h3>
   <% end %>
-
   <a href="/cats" class="btn btn-outline-secondary btn-block">
     <%=icon('fas', 'cat', :class=> "fa-2x col")%><strong class="col">View Cats</strong></a>
   <% if user_signed_in?%>
     <%#<a href="#" class="btn btn-outline-secondary btn-block"><%=icon('fas', 'heart', :class=> "fa-2x col")<strong class="col">Favourites</strong></a>%>
     <a href="/cats/new" class="btn btn-outline-secondary btn-block"><%=icon('fas', 'plus', :class=> "fa-2x col")%><strong class="col">Add New Cat</strong></a>
-      
+    <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-danger btn-block text-light mt-5" do %>
+      <span>
+        <%=icon('fas', 'sign-out-alt', :class=> "fa-1x")%>
+        Log Out
+      </span>
+    <% end %>
   <% else %>
     <a href="/users/sign_in" class="btn btn-outline-secondary btn-block"> <%=icon('fas', 'sign-in-alt', :class=> "fa-2x col")%><strong class="col">Log In</strong></a>
   <% end %>

@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :last_fed %>
-    <%= form.datetime_select :last_fed %>
+    <%#= form.label :last_fed %>
+    <%#= form.datetime_select :last_fed %>
   </div>
 
   <div class="field">
@@ -28,6 +28,7 @@
 
   <div class="field">
     <%= form.label :imageUrl %>
+    <%#= form.file_field :imageUrl, direct_upload: true, accept: "image/jpeg image/jpg image/png" %>
     <%= form.text_field :imageUrl %>
   </div>
 

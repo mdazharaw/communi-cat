@@ -1,10 +1,10 @@
 <%#= react_component("ViewCat", { cats: @cats, sectors: @sectors, currentSector: @initial_sector }) %>
-<%= link_to 'Back', cats_path ,:class=>"container"%>
+<%= link_to '< Back', cats_path ,:class=>"container"%>
 <br>
 <div class="container">
 
 <% if @cat.imageUrl != ""%>
-        <%= image_tag(@cat.imageUrl, {:style => "width:250px;"})%>
+        <%= image_tag(@cat.imageUrl, {:class => "w-100 mt-3 mb-3"})%>
         <%else%>
         <p>No image</p>
         <%end%>
@@ -22,9 +22,12 @@
   <strong>Estate:</strong>
   <%= @cat.sector.name %>
 </p>
-<%= link_to 'Edit', edit_cat_path(@cat) %> |
+  <% if user_signed_in?%>
+<%= link_to 'Update', edit_cat_path(@cat) %> | 	<%= link_to 'Remove', @cat, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<%= link_to 'Log Feeding', new_feed_log_path %>
+<%#= link_to 'Log Feeding', new_feed_log_path %>
+<% end %>
+
 <%#= link_to 'View Comments', comments_path %>
 <br>
 </div>

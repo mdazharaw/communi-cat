@@ -9,8 +9,8 @@ class CatsController < ApplicationController
       c = User.find(me.id)
       @initial_sector = c.sector_id
       @sector_name = Sector.find(@initial_sector).name
-      @cats = Cat.where(sector: @initial_sector)
-    else
+      @cats = Cat.where(sector: @initial_sector).order(last_fed: :asc)
+       else
       @initial_sector = 0
       @cats = Cat.all
     end 
