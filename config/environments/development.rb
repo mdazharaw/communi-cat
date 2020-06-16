@@ -63,4 +63,6 @@ Rails.application.configure do
   # Use Cloudinary.
 config.active_storage.service = :cloudinary
 
+config.time_zone = "Singapore"
+config.active_record.default_timezone = :local
 end

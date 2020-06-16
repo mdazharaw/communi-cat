@@ -1,5 +1,9 @@
 <%#= javascript_pack_tag 'Index' %>
-<div class = "container mw-100" style="display: flex; justify-content: between; flex-direction: column">
+<div class = "container mw-100 text-center" style="display: flex; justify-content: between; flex-direction: column">
+    <% if user_signed_in?%>
+    <h3>Hi <%= @email %></h3>
+  <% end %>
+
   <a href="/cats" class="btn btn-outline-secondary btn-block">
     <%=icon('fas', 'cat', :class=> "fa-2x col")%><strong class="col">View Cats</strong></a>
   <% if user_signed_in?%>

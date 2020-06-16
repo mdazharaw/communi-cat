@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
     def home
-        
+        if user_signed_in?
+            me = current_user
+            c = User.find(me.id)
+            @email = c.email
+        end
     end
     protected
 

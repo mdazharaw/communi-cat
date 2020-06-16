@@ -8,6 +8,7 @@ class CatsController < ApplicationController
       me = current_user
       c = User.find(me.id)
       @initial_sector = c.sector_id
+      @sector_name = Sector.find(@initial_sector).name
       @cats = Cat.where(sector: @initial_sector)
     else
       @initial_sector = 0
@@ -33,6 +34,11 @@ class CatsController < ApplicationController
 
   # GET /cats/1/edit
   def edit
+    if user_signed_in?
+      me = current_user
+      c = User.find(me.id)
+      @sector_id= c.sector_id
+    end
   end
 
   # POST /cats
@@ -54,6 +60,7 @@ class CatsController < ApplicationController
   # PATCH/PUT /cats/1
   # PATCH/PUT /cats/1.json
   def update
+    
     respond_to do |format|
       if @cat.update(cat_params)
         format.html { redirect_to @cat, notice: 'Cat was successfully updated.' }
