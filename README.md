@@ -6,7 +6,7 @@
 
 # Explanations of the technologies used
 - Devise authentication
-- Ruby/Rails (of course)
+- Ruby on Rails
 - Bootstrap CSS
 
 # A couple paragraphs about the general approach you took
